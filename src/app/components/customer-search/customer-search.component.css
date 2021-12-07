@@ -7,10 +7,10 @@ td{
 input{
     border-color: black;
 }
-.btn {
+/* .btn {
     min-width: 180px;
     max-width: 180px;
-}
+} */
 .btn{
     border-color: black;
     color: white;

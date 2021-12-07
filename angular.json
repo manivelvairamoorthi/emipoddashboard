@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "em-pod-dashaboard:build"
+            "browserTarget": "emi-pod-dashboard:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "em-pod-dashaboard"
+  "defaultProject": "emi-pod-dashboard"
 }

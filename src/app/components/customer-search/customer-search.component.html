@@ -1,38 +1,41 @@
 <!-- <h2>KPI DashBoard</h2> -->
+
             <form #registerForm="ngForm" class="row" (ngSubmit)="submit()"  autocomplete="off">
-                        <div class="form-floating col-2" >
+                        <!-- <div class="form-floating col" > -->
+                            <div class="col">
                             <input   type="tel" class="form-control" id = "mobileNumber" name="mobileNumber" 
-                        [(ngModel)]="model.mobileNumber" placeholder="mobileNumber"  >
-                        <label for="mobileNumber"> Mobile Number</label>
+                        [(ngModel)]="model.mobileNumber" placeholder="Mobile Number"  >
+                        <!-- <label for="mobileNumber"> Mobile Number</label> -->
                         </div>
-                        <div class="form-floating col-2">
+                        <!-- <div class="form-floating col"> -->
+                            <div class="col">
                             <input    type="text" class="form-control" id="podRequestId" name="podRequestId" 
-                        [(ngModel)]="model.podRequestId" placeholder="podRequestId"  >
-                        <label for="podRequestId">Pod RequestId</label>
+                        [(ngModel)]="model.podRequestId" placeholder="Pod RequestId"  >
+                        <!-- <label for="podRequestId">Pod RequestId</label> -->
                         </div>
-                        <div class="form-floating col-2">
+                        <!-- <div class="form-floating col">
                             <input    type="datetime-local" id ="startTime" class="form-control" name="startTime" 
                         [(ngModel)]="model.startTime" placeholder="startTime"  >
                         <label for="startTime">Start Time</label>
                         </div>
-                        <div class="form-floating col-2">
+                        <div class="form-floating col">
                             <input    type="datetime-local" id ="endTime"  class="form-control" name="endTime" 
                         [(ngModel)]="model.endTime" placeholder="endTime"  >
                         <label for="endTime">End Time</label>
-                        </div>
-                        <div class="col-2">
+                        </div> -->
+                        <div class="col">
                             <button class=" btn btn-search" type="submit">Search</button>
                         </div>
-                        <div class="col-2">
-                            <button class="btn btn-dwn" type="submit">Download as CSV</button>
+                        <div class="col text-end">
+                            <button class="btn btn-dwn" (click)="exportexcel()">Export</button>
                         </div>
             </form>
-            <hr>
-    <div class="row table-responsive ">
-            <table class="table table-stripped ">
+            <br>
+    <div class="row  table-responsive">
+            <table class="table table-striped table-bordered " id="excel-table" >
                 <thead>
                     <tr >
-                        <th *ngFor="let key of keys">{{key}}</th>
+                        <th *ngFor="let key of keys" >{{key}}</th>
                     </tr>
                 </thead>
                 <tbody >
