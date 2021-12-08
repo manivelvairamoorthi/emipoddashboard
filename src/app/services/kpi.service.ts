@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LiteralPrimitive } from '@angular/compiler';
 import { stringify } from '@angular/compiler/src/util';
+import { environment } from 'src/environments/environment';
 // import 'rxjs/add/operator/map';
 
-const baseUrl = "https://localhost:5001/DashBoard/CustomerSearch";
+const apiUrl =environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class KpiService {
         'Content-Type':'application/json'
       }
     };
-    var resp= this.http.post(baseUrl,model, options);
+    var resp= this.http.post(apiUrl+"customerSearch",model, options);
     return resp;
   }
 }

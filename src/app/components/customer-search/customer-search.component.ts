@@ -19,16 +19,18 @@ export class CustomerSearchComponent implements OnInit {
   ngOnInit(): void {
     // this.model.mobileNumber = "8789246572";
     // this.model.podRequestId = "12345";
-    this.today.setMinutes(this.today.getMinutes()+330);
-    this.model.endTime = this.today.toISOString().slice(0, 16);
-    this.today.setDate(this.today.getDate()-1);
-    this.model.startTime = this.today.toISOString().slice(0, 16);
-    console.log("date -"+this.model.startTime);
+    // this.today.setMinutes(this.today.getMinutes()+330);
+    // this.model.endTime = this.today.toISOString().slice(0, 16);
+    // this.today.setDate(this.today.getDate()-1);
+    // this.model.startTime = this.today.toISOString().slice(0, 16);
+    // console.log("date -"+this.model.startTime);
       
   }
   submit(){
     this.service.fetchKpiData(this.model).
       subscribe((data: any)=>{
+        console.log(this.model);
+        console.log(data);
         this.kpiObject=data.kpiItemList;
         this.keys = Object.keys(this.kpiObject[0]);
       });
