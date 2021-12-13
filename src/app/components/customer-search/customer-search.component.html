@@ -1,28 +1,14 @@
-<!-- <h2>KPI DashBoard</h2> -->
 
             <form #registerForm="ngForm" class="row" (ngSubmit)="submit()"  autocomplete="off">
-                        <!-- <div class="form-floating col" > -->
                             <div class="col">
                             <input   type="tel" class="form-control" id = "mobileNumber" name="mobileNumber" 
                         [(ngModel)]="model.mobileNumber" placeholder="Mobile Number"  >
-                        <!-- <label for="mobileNumber"> Mobile Number</label> -->
                         </div>
-                        <!-- <div class="form-floating col"> -->
                             <div class="col">
                             <input    type="text" class="form-control" id="podRequestId" name="podRequestId" 
                         [(ngModel)]="model.podRequestId" placeholder="Pod RequestId"  >
-                        <!-- <label for="podRequestId">Pod RequestId</label> -->
                         </div>
-                        <!-- <div class="form-floating col">
-                            <input    type="datetime-local" id ="startTime" class="form-control" name="startTime" 
-                        [(ngModel)]="model.startTime" placeholder="startTime"  >
-                        <label for="startTime">Start Time</label>
-                        </div>
-                        <div class="form-floating col">
-                            <input    type="datetime-local" id ="endTime"  class="form-control" name="endTime" 
-                        [(ngModel)]="model.endTime" placeholder="endTime"  >
-                        <label for="endTime">End Time</label>
-                        </div> -->
+                        
                         <div class="col">
                             <button class=" btn btn-search" type="submit">Search</button>
                         </div>
@@ -46,8 +32,10 @@
                         </td>
                     </tr>
                 </tbody>
-            
             </table>
+            <div *ngIf="emptyData">
+                <span>No Record Found</span>
+            </div>
         
     </div>
     
